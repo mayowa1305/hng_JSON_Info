@@ -16,10 +16,16 @@ type internInfo struct {
 	Bio           string `json:"bio"`
 }
 
-var boluwatife []internInfo
+var boluwatife interface{}
 
 func main() {
-	boluwatife = append(boluwatife, internInfo{SlackUsername: "Bolu_adx", Backend: true, Age: 22, Bio: "my name is adeyinka boluwatife and i'm a golang backend developer, i'm also a student of electrical and electronics engineering in federal university of agriculture abeokuta. i'm ready to give my best for this hng internship"})
+
+	boluwatife = &internInfo{
+		SlackUsername: "Bolu_adx",
+		Backend:       true,
+		Age:           22,
+		Bio:           "my name is adeyinka boluwatife and i'm a golang backend developer, i'm also a student of electrical and electronics engineering in federal university of agriculture abeokuta. i'm ready to give my best for this hng internship",
+	}
 
 	r := mux.NewRouter()
 
